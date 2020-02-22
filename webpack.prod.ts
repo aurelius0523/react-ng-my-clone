@@ -1,18 +1,9 @@
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import CopyWebPackPlugin from "copy-webpack-plugin";
-import HtmlWebPackPlugin from "html-webpack-plugin";
-import path from "path";
 import webpack from "webpack";
+import merge from "webpack-merge";
+import commonConfig from "./webpack.common";
 
-const commonConfig: webpack.Configuration = {
-    entry: './src/index.tsx',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'app.bundle.[hash:5].js'
-    },
-    resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"]
-    },
+const prodConfig: webpack.Configuration = merge.smart(commonConfig, {
+    mode: "production",
     module: {
         rules: [
             {
@@ -34,7 +25,7 @@ const commonConfig: webpack.Configuration = {
                         options: {
                             modules: {
                                 mode: "local",
-                                localIdentName: "[name]__[local]___[hash:base64:5]"
+                                localIdentName: "[hash:base64:5]"
                             }
                         }
                     },
@@ -51,23 +42,6 @@ const commonConfig: webpack.Configuration = {
             }
         ]
     },
-    plugins: [
-        new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html"
-        }),
-        new CopyWebPackPlugin([
-            {
-                from: "./src/assets/robots/robots.prod.txt",
-                to: "robots.txt"
-            }
-        ]),
-        new CleanWebpackPlugin()
-    ],
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    }
-};
+})
 
-export default commonConfig;
+export default prodConfig;

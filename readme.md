@@ -1,5 +1,5 @@
 ### TODO
-1. webpack config for different development
+1. Use alias
 1. Mock server
 1. Css modules - variable and global stuffs
 1. See what happens when 'react' is an external dependency
