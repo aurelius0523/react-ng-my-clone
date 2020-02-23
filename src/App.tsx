@@ -4,15 +4,16 @@ import CssModules from 'react-css-modules';
 import { Switch, Route, Link } from "react-router-dom";
 import PageHeader from "Components/common/PageHeader";
 import { AppRoutes } from "Constants/routes";
+import axios from "axios";
 
 const App: React.FC = () => {
     const About = React.lazy(() => import(/* webpackChunkName: "About" */ "Components/pages/About"));
     const Project = React.lazy(() => import(/* webpackChunkName: "Project" */ "Components/pages/Project"));
 
-    React.useEffect(()=>{
-        const res = fetch('/api/users').then(res => res.json()).then(console.log);
-    },[]);
-    
+    React.useEffect(() => {
+        axios.get("/api/users").then(console.log);
+    }, []);
+
     return (
         <div styleName="app-container">
             <PageHeader title={"App"} />
