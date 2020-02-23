@@ -1,4 +1,4 @@
 export enum AppRoutes{
-    About = "/About",
-    Project = "/Project"
+    About = "/about",
+    Project = "/project"
 }

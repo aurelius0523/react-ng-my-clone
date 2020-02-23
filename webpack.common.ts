@@ -11,7 +11,7 @@ const commonConfig: webpack.Configuration = {
     entry: './src/index.tsx',
     output: {
         path: DIST_DIR,
-        filename: 'app.bundle.[hash:5].js'
+        filename: 'static/app.bundle.[hash:5].js'
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"],
