@@ -1,5 +1,4 @@
 ### TODO
-1. Use alias
 1. Mock server
 1. Css modules - variable and global stuffs
 1. See what happens when 'react' is an external dependency
@@ -13,6 +12,7 @@
 1. css modules using `react-css-modules`. By using css module we can also hash the css names
 1. Meta for discovery using Open Graph protocol (meta tag with og scheme)
 1. Getting react library via CDN helps in minimising bundle size. Set `react` and `react-dom` as `externals` in webpack config
+1. [Webpack path alias](https://medium.com/@etherealm/getting-rid-of-relative-paths-in-imports-using-webpack-alias-78d4bf15bb42) and [additional configuration for Typescript](https://stackoverflow.com/questions/40443806/webpack-resolve-alias-does-not-work-with-typescript)
 
 ### SEO
 1. Sitemap.xml can be added to [robot.txt](https://neilpatel.com/blog/robots-txt/)

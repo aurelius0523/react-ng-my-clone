@@ -1,5 +1,5 @@
 import * as React from "react";
-import PageHeader from "../common/PageHeader";
+import PageHeader from "Components/common/PageHeader";
 
 const Project: React.FC = () => {
     return (

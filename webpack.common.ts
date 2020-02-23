@@ -4,14 +4,21 @@ import HtmlWebPackPlugin from "html-webpack-plugin";
 import path from "path";
 import webpack from "webpack";
 
+const SRC_DIR = path.resolve(__dirname, "src");
+const DIST_DIR = path.resolve(__dirname, "dist");
+
 const commonConfig: webpack.Configuration = {
     entry: './src/index.tsx',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: DIST_DIR,
         filename: 'app.bundle.[hash:5].js'
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"]
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"],
+        alias: {
+            Components: `${SRC_DIR}/components`,
+            Constants: `${SRC_DIR}/constants`,
+        }
     },
     module: {
         rules: [

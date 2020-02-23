@@ -2,12 +2,12 @@ import * as React from "react";
 import styles from "./app.scss";
 import CssModules from 'react-css-modules';
 import { Switch, Route, Link } from "react-router-dom";
-import PageHeader from "./components/common/PageHeader";
-import { AppRoutes } from "./constants/routes";
+import PageHeader from "Components/common/PageHeader";
+import { AppRoutes } from "Constants/routes";
 
 const App: React.FC = () => {
-    const About = React.lazy(() => import(/* webpackChunkName: "About" */ "./components/pages/About"));
-    const Project = React.lazy(() => import(/* webpackChunkName: "Project" */ "./components/pages/Project"));
+    const About = React.lazy(() => import(/* webpackChunkName: "About" */ "Components/pages/About"));
+    const Project = React.lazy(() => import(/* webpackChunkName: "Project" */ "Components/pages/Project"));
 
     return (
         <div styleName="app-container">
