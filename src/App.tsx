@@ -9,6 +9,10 @@ const App: React.FC = () => {
     const About = React.lazy(() => import(/* webpackChunkName: "About" */ "Components/pages/About"));
     const Project = React.lazy(() => import(/* webpackChunkName: "Project" */ "Components/pages/Project"));
 
+    React.useEffect(()=>{
+        const res = fetch('/api/users').then(res => res.json()).then(console.log);
+    },[]);
+    
     return (
         <div styleName="app-container">
             <PageHeader title={"App"} />

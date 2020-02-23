@@ -1,7 +1,6 @@
 ### TODO
-1. Mock server
+1. Add axios
 1. Css modules - variable and global stuffs
-1. See what happens when 'react' is an external dependency
 1. Per-page meta handling for SEO (react-router)
 1. Create sitemap.xml and register that with google https://www.youtube.com/watch?v=xtoAfUB6Ubw
 1. Read up on critical rendering path on [udacity](https://classroom.udacity.com/courses/ud860)

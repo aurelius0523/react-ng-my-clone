@@ -4,8 +4,8 @@ import HtmlWebPackPlugin from "html-webpack-plugin";
 import path from "path";
 import webpack from "webpack";
 
-const SRC_DIR = path.resolve(__dirname, "src");
-const DIST_DIR = path.resolve(__dirname, "dist");
+export const SRC_DIR = path.resolve(__dirname, "src");
+export const DIST_DIR = path.resolve(__dirname, "dist");
 
 const commonConfig: webpack.Configuration = {
     entry: './src/index.tsx',
@@ -74,7 +74,7 @@ const commonConfig: webpack.Configuration = {
     externals: {
         "react": "React",
         "react-dom": "ReactDOM"
-    }
+    },
 };
 
 export default commonConfig;
