@@ -1,7 +1,8 @@
 import { render } from "prerender-xs";
 import path from "path";
+import { getAllRoutes } from "./seoRouteUtils";
 
-const routes = ['/', '/project', '/about']
+const routes = getAllRoutes();
 
 export const prerender = async (targetOptions?, indexHtml?) => {
     try {

@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --mode development --config webpack.dev.ts --open",
     "start:prod": "webpack-dev-server --mode production --config webpack.prod.ts --open",
     "build:dev": "webpack --mode development --config webpack.dev.ts",
-    "build:prod": "webpack --mode production --config webpack.prod.ts && ts-node ssr/prerender.ts",
+    "build:prod": "webpack --mode production --config webpack.prod.ts && ts-node seo/prerender.ts && ts-node seo/sitemapbuilder.ts",
     "deploy:express": "npm run build:prod && ts-node test-server/server.ts",
     "deploy:netlify": "npm run build:prod && netlify deploy -d ./build -p",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -60,6 +60,7 @@
     "prerender-xs": "^1.0.1",
     "puppeteer": "^2.1.1",
     "react-css-modules": "^4.7.11",
+    "react-router-sitemap": "^1.2.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "ts-loader": "^6.2.1",

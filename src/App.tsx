@@ -8,7 +8,7 @@ import styles from "./app.scss";
 
 const App: React.FC = () => {
     const About = React.lazy(() => import(/* webpackChunkName: "About" */ "Components/pages/About"));
-    const Project = React.lazy(() => import(/* webpackChunkName: "Project" */ "Components/pages/Project"));
+    const Project = React.lazy(() => import(/* webpackChunkName: "Project" */ "Components/pages/project/Project"));
 
     React.useEffect(() => {
         JsonPlaceholderApi.getTodoList().then(resp => {console.log("effect", resp)});

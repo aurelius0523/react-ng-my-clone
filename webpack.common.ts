@@ -82,7 +82,7 @@ const commonConfig: webpack.Configuration = {
     externals: {
         "react": "React",
         "react-dom": "ReactDOM"
-    },
+    }
 };
 
 export default commonConfig;

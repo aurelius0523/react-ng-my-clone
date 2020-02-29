@@ -9,7 +9,7 @@ interface Props {
 const PageHeader: React.FC<Props> = (props) => {
     return (
         <div styleName="page-header-container">
-            {props.title}
+            <h1>{props.title}</h1>
         </div>
     );
 }
