@@ -6,11 +6,12 @@ import path from "path";
 import webpack from "webpack";
 
 export const SRC_DIR = path.resolve(__dirname, "src");
-export const DIST_DIR = path.resolve(__dirname, "dist");
+export const DIST_DIR = path.resolve(__dirname, "build");
 
 const commonConfig: webpack.Configuration = {
     entry: './src/index.tsx',
     output: {
+        publicPath: "/",
         path: DIST_DIR,
         filename: 'static/app.bundle.[hash:5].js'
     },

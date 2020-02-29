@@ -6,7 +6,7 @@ const routes = ['/', '/project', '/about']
 export const prerender = async (targetOptions?, indexHtml?) => {
     try {
         const data: any = await render({
-            staticDir: path.join(__dirname, '../dist'), routes, // where your SPA located
+            staticDir: path.join(__dirname, '../build'), routes, // where your SPA located
         });
 
         return data.find(x => x.route === "/").html;

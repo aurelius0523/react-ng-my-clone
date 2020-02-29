@@ -1,10 +1,10 @@
 ### TODO
-1. Add switching between local/remote apis
 1. Css modules - variable and global stuffs
 1. Create sitemap.xml and register that with google https://www.youtube.com/watch?v=xtoAfUB6Ubw
 1. Read up on critical rendering path on [udacity](https://classroom.udacity.com/courses/ud860)
 1. [keep alive](https://varvy.com/pagespeed/keep-alive.html)
 1. Rendering performance [reflow](https://developers.google.com/speed/docs/insights/browser-reflow)
+1. deploy to netlify
 
 ### Cool stuffs
 1. css modules using `react-css-modules`. By using css module we can also hash the css names
@@ -16,15 +16,16 @@
    - There are additional steps that have to be wired together:
       1. Start application after bundling
       1. pre-render pages
-      1. Add them to dist folder
+      1. Add them to `build` folder
 1. Isomorphic rendering is achieved for production
    1. When building for production, `prerender-xs` is used to generate `index.html` for all routes
-   1. Pre-rendered contents of `dist` folder will be served by `express` located in `test-server` folder or simply by running `npm run deploy:prod`
+   1. Pre-rendered contents of `build` folder will be served by `express` located in `test-server` folder or simply by running `npm run deploy:express`
    1. _Note that this is isomorphic rendering which means that after an `index.html` is served for a particular route any other `react-router` navigation using `<Link>` component remains as `client-side-routing`_
 1. Mock api is configured in webpack.dev.ts using `connect-api-mocker` package
    1. Configure `webpack-dev-server` in `webpack.dev.ts` to serve mock API
    1. Make sure mocks are available. Look at `JsonPlaceholderApi.ts` to see how is it set up.
    1. Switch between mock and non-mock mode in `configs.ts`
+1. Deployment to netlify is possible by running `npm run deploy:netlify` after installing `netlify-cli` npm package
 
 ### SEO
 1. Sitemap.xml can be added to [robot.txt](https://neilpatel.com/blog/robots-txt/)
