@@ -22,6 +22,9 @@
    1. Pre-rendered contents of `dist` folder will be served by `express` located in `test-server` folder or simply by running `npm run deploy:prod`
    1. _Note that this is isomorphic rendering which means that after an `index.html` is served for a particular route any other `react-router` navigation using `<Link>` component remains as `client-side-routing`_
 1. Mock api is configured in webpack.dev.ts using `connect-api-mocker` package
+   1. Configure `webpack-dev-server` in `webpack.dev.ts` to serve mock API
+   1. Make sure mocks are available. Look at `JsonPlaceholderApi.ts` to see how is it set up.
+   1. Switch between mock and non-mock mode in `configs.ts`
 
 ### SEO
 1. Sitemap.xml can be added to [robot.txt](https://neilpatel.com/blog/robots-txt/)

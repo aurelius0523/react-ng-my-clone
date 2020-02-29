@@ -19,6 +19,7 @@ const commonConfig: webpack.Configuration = {
         alias: {
             Components: `${SRC_DIR}/components`,
             Constants: `${SRC_DIR}/constants`,
+            Apis: `${SRC_DIR}/apis`
         }
     },
     module: {
@@ -64,7 +65,11 @@ const commonConfig: webpack.Configuration = {
             template: "./src/index.html",
             filename: "./index.html"
         }),
-        new FaviconsWebPackPlugin({ logo: "./favicon.ico" }),
+        new FaviconsWebPackPlugin({
+            logo: "./favicon.ico",
+            publicPath: '/static',
+            outputPath: '/static/assets'
+        }),
         new CopyWebPackPlugin([
             {
                 from: "./src/assets/robots/robots.prod.txt",
