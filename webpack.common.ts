@@ -75,6 +75,10 @@ const commonConfig: webpack.Configuration = {
             {
                 from: "./src/assets/robots/robots.prod.txt",
                 to: "robots.txt"
+            },
+            {
+                from: "./src/assets/google/google98b3d2999ea54121.html",
+                to: "google98b3d2999ea54121.html"
             }
         ]),
         new CleanWebpackPlugin()

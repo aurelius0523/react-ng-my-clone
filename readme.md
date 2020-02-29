@@ -27,6 +27,9 @@
    1. Make sure mocks are available. Look at `JsonPlaceholderApi.ts` to see how is it set up.
    1. Switch between mock and non-mock mode in `configs.ts`
 1. Deployment to netlify is possible by running `npm run deploy:netlify` after installing `netlify-cli` npm package
+1. Sitemap will be automatically generated based on routes defined for react-router in `routes.ts`
+   - You can add your sitemap to google [here](https://www.xml-sitemaps.com/)
+   - You can manage your domain's indexing [here](https://search.google.com/)
 
 ### SEO
 1. Sitemap.xml can be added to [robot.txt](https://neilpatel.com/blog/robots-txt/)

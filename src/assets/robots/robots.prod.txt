@@ -1,1 +1,4 @@
-prod 
+User-Agent: *
+Disallow: /static/
+
+Sitemap: https://react-ng-my-clone.netlify.com/sitemap.xml
