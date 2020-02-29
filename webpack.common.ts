@@ -1,6 +1,7 @@
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import CopyWebPackPlugin from "copy-webpack-plugin";
 import HtmlWebPackPlugin from "html-webpack-plugin";
+import FaviconsWebPackPlugin from "favicons-webpack-plugin";
 import path from "path";
 import webpack from "webpack";
 
@@ -63,6 +64,7 @@ const commonConfig: webpack.Configuration = {
             template: "./src/index.html",
             filename: "./index.html"
         }),
+        new FaviconsWebPackPlugin({ logo: "./favicon.ico" }),
         new CopyWebPackPlugin([
             {
                 from: "./src/assets/robots/robots.prod.txt",
