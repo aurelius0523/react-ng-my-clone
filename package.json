@@ -8,7 +8,7 @@
     "start:prod": "cross-env TS_NODE_PROJECT=tsconfig.webpack.json webpack-dev-server --mode production --config webpack.prod.ts --open",
     "build:dev": "cross-env TS_NODE_PROJECT=tsconfig.webpack.json webpack --mode development --config webpack.dev.ts",
     "build:prod": "cross-env TS_NODE_PROJECT=tsconfig.webpack.json webpack --mode production --config webpack.prod.ts && cross-env TS_NODE_PROJECT=tsconfig.webpack.json ts-node seo/prerender.ts && cross-env TS_NODE_PROJECT=tsconfig.webpack.json ts-node seo/sitemapbuilder.ts",
-    "deploy:express": "npm run build:prod && ts-node test-server/server.ts",
+    "deploy:express": "npm run build:prod && cross-env TS_NODE_PROJECT=tsconfig.webpack.json ts-node test-server/server.ts",
     "deploy:netlify": "npm run build:prod && netlify deploy -d ./build -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -54,6 +54,7 @@
     "cross-env": "^7.0.0",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
+    "extract-css-chunks-webpack-plugin": "^4.7.4",
     "favicons-webpack-plugin": "^2.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",

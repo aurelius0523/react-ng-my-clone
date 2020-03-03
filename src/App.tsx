@@ -5,6 +5,7 @@ import * as React from "react";
 import CssModules from 'react-css-modules';
 import { Link, Route, Switch } from "react-router-dom";
 import styles from "./app.scss";
+import Loader from "Components/common/Loader";
 
 const App: React.FC = () => {
     const About = React.lazy(() => import(/* webpackChunkName: "About" */ "Components/pages/about"));
@@ -19,7 +20,7 @@ const App: React.FC = () => {
             <PageHeader title={"App"} />
             <RouteButtonContainer />
             <div className="routes">
-                <React.Suspense fallback={() => <div>Loading...</div>}>
+                <React.Suspense fallback={() => <Loader />}>
                     <Switch>
                         <Route path={AppRoutes.About} component={About} />
                         <Route path={AppRoutes.Project} component={Project} />

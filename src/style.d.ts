@@ -1,4 +1,4 @@
 declare module '*.scss' {
-    const value: any
-    export = value
-  }
+  const content: { [className: string]: string };
+  export default content;
+}

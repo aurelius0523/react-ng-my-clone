@@ -2,6 +2,8 @@ import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import CopyWebPackPlugin from "copy-webpack-plugin";
 import HtmlWebPackPlugin from "html-webpack-plugin";
 import FaviconsWebPackPlugin from "favicons-webpack-plugin";
+import ExtractCssChunksWebPackPlugin from "extract-css-chunks-webpack-plugin";
+
 import path from "path";
 import webpack from "webpack";
 
@@ -38,7 +40,12 @@ const commonConfig: webpack.Configuration = {
                 test: /\.scss/,
                 exclude: /node_modules/,
                 use: [
-                    { loader: "style-loader" },
+                    {
+                        loader: ExtractCssChunksWebPackPlugin.loader,
+                        options: {
+                            hmr: true
+                        }
+                    },
                     {
                         loader: "css-loader",
                         options: {
@@ -81,7 +88,11 @@ const commonConfig: webpack.Configuration = {
                 to: "google98b3d2999ea54121.html"
             }
         ]),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new ExtractCssChunksWebPackPlugin({
+            filename:  'static/css/[name].[hash].css',
+            chunkFilename: 'static/css/[id].[hash].css'
+          })
     ],
     externals: {
         "react": "React",

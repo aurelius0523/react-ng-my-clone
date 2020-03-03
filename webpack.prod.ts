@@ -1,6 +1,7 @@
 import webpack from "webpack";
 import merge from "webpack-merge";
 import commonConfig from "./webpack.common";
+import ExtractCssChunksWebPackPlugin from "extract-css-chunks-webpack-plugin";
 
 const prodConfig: webpack.Configuration = merge.smart(commonConfig, {
     mode: "production",
@@ -19,7 +20,9 @@ const prodConfig: webpack.Configuration = merge.smart(commonConfig, {
                 test: /\.scss/,
                 exclude: /node_modules/,
                 use: [
-                    { loader: "style-loader" },
+                    {
+                        loader: ExtractCssChunksWebPackPlugin.loader
+                    },
                     {
                         loader: "css-loader",
                         options: {
