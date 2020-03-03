@@ -1,5 +1,5 @@
 ### TODO
-1. Update sitemap to add replacement for parameter
+1. Update sitemap to add pages with unique ID
 1. Css modules - variable and global stuffs
 1. Create sitemap.xml and register that with google https://www.youtube.com/watch?v=xtoAfUB6Ubw
 1. Read up on critical rendering path on [udacity](https://classroom.udacity.com/courses/ud860)
@@ -41,3 +41,9 @@
 
 ### Resource
 1. [Excellent SPA SEO article #1](https://snipcart.com/spa-seo)
+
+### Gotchas
+1. When trying to code-split Typescript there it's necessary to set `module` to `esnext` in `tsconfig.json`. If you're using typescript webpack configuration there will be [extra steps that needs to be taken](https://skovy.dev/code-splitting-with-webpack-typescript-react/). That's to:
+   - install `cross-env`
+   - add `tsconfig.webpack.json` so that webpack configuration doesn't get read as esnext modules
+   - add `TS_NODE_PROJECT=tsconfig.webpack.json` to npm run scripts

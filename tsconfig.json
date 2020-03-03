@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
         "jsx": "react",
-        "module": "commonjs",
+        "module": "esnext",
         "target": "es5",
+        "moduleResolution": "node",
         "esModuleInterop": true,
         "outDir": "./build/",
         "sourceMap": true,

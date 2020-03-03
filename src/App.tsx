@@ -7,8 +7,8 @@ import { Link, Route, Switch } from "react-router-dom";
 import styles from "./app.scss";
 
 const App: React.FC = () => {
-    const About = React.lazy(() => import(/* webpackChunkName: "About" */ "Components/pages/About"));
-    const Project = React.lazy(() => import(/* webpackChunkName: "Project" */ "Components/pages/project/Project"));
+    const About = React.lazy(() => import(/* webpackChunkName: "About" */ "Components/pages/about"));
+    const Project = React.lazy(() => import(/* webpackChunkName: "Project" */ "Components/pages/project"));
 
     React.useEffect(() => {
         JsonPlaceholderApi.getTodoList().then(resp => {console.log("effect", resp)});
